@@ -131,7 +131,14 @@ if ($result1) {
                 <p class="text-center">Hope you enjoyed our service</p>
             </div>
         </div>
-
+        <div class="row text-center">
+            <div class="col-md-12 offset-md-3">
+                <form class="form-inline my-2 my-lg-0" onsubmit="return searchClients()">
+                    <input class="form-control mr-sm-2" type="text" id="clientSearch" placeholder="Search by client name">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
         <div class="table-responsive" style="padding-left: 100px; padding-right: 100px;">
             <table class="table table-striped">
                 <thead class="thead-dark">
@@ -191,6 +198,32 @@ if ($result1) {
     echo "Error: " . $conn->error;
 }
 ?>
+
+<script>
+    function searchClients() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("clientSearch");
+        filter = input.value.toUpperCase();
+        table = document.querySelector(".table");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those that don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1]; // Change index if you want to search in a different column
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+
+        return false; // Prevent the form from submitting
+    }
+</script>
 
 
 </body>
