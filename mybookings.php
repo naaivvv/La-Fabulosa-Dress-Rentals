@@ -118,7 +118,7 @@ $conn = Connect();
     <?php
 $login_customer = $_SESSION['login_customer'];
 
-$sql1 = "SELECT d.dress_name, rd.id, rd.rent_start_date, rd.rent_end_date, rd.charge_type, rd.dress_price, rd.no_of_days, rd.total_amount, rd.return_status, rd.decision FROM renteddresses rd, dresses d
+$sql1 = "SELECT rd.dress_id, d.dress_name, rd.id, rd.rent_start_date, rd.rent_end_date, rd.charge_type, rd.dress_price, rd.no_of_days, rd.total_amount, rd.return_status, rd.decision FROM renteddresses rd, dresses d
     WHERE rd.customer_username='$login_customer' AND d.dress_id=rd.dress_id";
 $result1 = $conn->query($sql1);
 
@@ -151,6 +151,7 @@ if (mysqli_num_rows($result1) > 0) {
                     <th width="15%">Total Amount</th>
                     <th width="7%">Status</th>
                     <th width="10%">Decision</th>
+                    <th width="10%">Action</th>
                 </tr>
             </thead>
             <?php
@@ -172,6 +173,29 @@ if (mysqli_num_rows($result1) > 0) {
                     <td>PHP <?php echo ($row["total_amount"]); ?></td>
                     <td><?php echo ($row["return_status"]); ?></td>
                     <td><?php echo ($row["decision"]); ?></td>
+                    <td>
+                    <a href="#" data-toggle="modal" data-target="#deleteModal<?php echo $row["dress_id"]; ?>"> Cancel </a>
+                        <!-- Delete Confirmation Modal -->
+                        <div class="modal fade" id="deleteModal<?php echo $row["dress_id"]; ?>" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to cancel this dress booking?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <a href="canceldressbooking.php?id=<?php echo $row["dress_id"]; ?>" class="btn btn-danger">Cancel Booking</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             <?php        } ?>
         </table>
