@@ -146,7 +146,7 @@
                     <h5>Dress Type: <b><?php echo $dress_type; ?></b></h5>
                     <h5>Dress Color: <b><?php echo $dress_color; ?></b></h5>
                     <h5>Dress Size: <b><?php echo $dress_size; ?></b></h5>
-                    <h5>Dress Price: Rs. <b><?php echo $dress_price; ?></b></h5>
+                    <h5>Dress Price: PHP <b><?php echo $dress_price; ?></b></h5>
 
                     <input type="hidden" name="dress_id" value="<?php echo $dress_id; ?>">
                     <input type="hidden" name="dress_name" value="<?php echo $dress_name; ?>">
@@ -172,7 +172,7 @@
                 </form>
 
                 <div class="col-md-12" style="float: none; margin: 0 auto; text-align: center;">
-                    <h6><strong>Note:</strong> You will be charged with extra <span class="text-danger">Rs. 500</span> for each day after the due date ends.</h6>
+                    <h6><strong>Note:</strong> You will be charged with extra <span class="text-danger">PHP 500</span> for each day after the due date ends.</h6>
                 </div>
             </div>
         </div>
