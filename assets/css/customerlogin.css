@@ -42,3 +42,28 @@ footer {
   text-shadow: 2px 2px 5px lightgreen;
   color: green;
 }
+
+.navbar-brand:hover,
+.navbar-custom .nav li a:hover {
+  outline: 0;
+  color: #f080d4 !important;
+  background-color: transparent;
+}
+
+.navbar-custom .nav li a:focus,
+.navbar-custom .nav li a:active {
+  outline: 0;
+  background-color: transparent;
+}
+
+.navbar-custom .nav li.active {
+  outline: 0;
+}
+
+.navbar-custom .nav li.active a {
+  color: #f080d4 !important;
+}
+
+.navbar-custom .nav li.active a:hover {
+  color: #f080d4 !important;
+}

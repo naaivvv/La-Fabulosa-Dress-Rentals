@@ -217,7 +217,7 @@ $conn = Connect();
                     if($extra_days > 0){
                         
                 ?>
-                <h4> <strong>Total Fine:</strong> <label class="text-danger"> Rs. <?php echo $total_amount; ?>/- </label> for <?php echo $extra_days;?> extra days.</h4>
+                <h4> <strong>Total Fine:</strong> <label class="text-danger"> PHP <?php echo $total_amount; ?>/- </label> for <?php echo $extra_days;?> extra days.</h4>
                 <br>
                 <?php } ?>
                 <h4> <strong>Total Amount: </strong> PHP <?php echo $total_amount; ?></h4>
