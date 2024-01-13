@@ -163,11 +163,11 @@ if(isset($_SESSION['login_client'])){
                             </div>
 
                             <div class="row">
-                                <div class="form-group col-xs-4">
+                                <center>
+                                <div class="form-group col-12 align-items-center">
                                     <button class="btn pink-component" name="submit" type="submit" value=" Login ">Submit</button>
-
                                 </div>
-
+                                </center>
                             </div>
                             <label style="margin-left: 5px;">or</label> <br>
                             <label style="margin-left: 5px;"><a href="clientsignup.php">Create a new account.</a></label>

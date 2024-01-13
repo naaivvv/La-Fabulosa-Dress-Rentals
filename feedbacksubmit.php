@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($insert_result) {
         // Insert successful, set session confirmation
-        $_SESSION['feedback_success'] = "Feedback submitted successfully!";
+        $_SESSION['feedback_success'] = "Thank you for leaving us a message. Our employee will contact you via email.";
     } else {
         // Insert failed, set session confirmation
         $_SESSION['feedback_fail'] = "Error submitting feedback. Please try again.";

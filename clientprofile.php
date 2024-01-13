@@ -131,8 +131,14 @@ if(mysqli_num_rows($result) == 1) {
     </div>
     <!-- /.container -->
 </nav>
+<div class="row" style="margin:65px 5px 0 0;">
+            <div class="col-md-12 text-right">
+                <a href="contactmessages.php"><button class="btn-primary">View Contact Messages</button></a>
+            </div>
+            </div>
 <div class="container" style="margin-top: 65px;">
-        <div class="col-md-7" style="float: none; margin: 0 auto;">
+            
+<div class="col-md-7" style="float: none; margin: 0 auto;">
             <div class="form-area">
                 <form role="form" action="editclient.php" method="POST">
                     <!-- Add hidden input field for client_username -->
