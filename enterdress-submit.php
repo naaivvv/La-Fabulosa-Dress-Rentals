@@ -146,7 +146,7 @@
         $target_path = "assets/img/dresses/" . $imagename;
 
         if (move_uploaded_file($temp_name, $target_path)) {
-            $query = "INSERT into dresses(dress_name, dress_type, dress_color, dress_size, dress_price, dress_price_per_day, dress_price_per_rent, dress_img, dress_availability) VALUES('" . $dress_name . "','" . $dress_type . "','" . $dress_color . "','" . $dress_size . "','" . $dress_price . "','" . $target_path . "','" . $dress_availability . "')";
+            $query = "INSERT into dresses(dress_name, dress_type, dress_color, dress_size, dress_price, dress_price_per_day, dress_price_per_rent, dress_img, dress_availability) VALUES('" . $dress_name . "','" . $dress_type . "','" . $dress_color . "','" . $dress_size . "','" . $dress_price . "','" . $dress_price_per_day . "','" . $dress_price_per_rent . "','" . $target_path . "','" . $dress_availability . "')";
             $success = $conn->query($query);
         }
     }
