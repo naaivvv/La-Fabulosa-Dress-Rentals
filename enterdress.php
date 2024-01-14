@@ -115,7 +115,10 @@ include('session_client.php'); ?>
               <form role="form" action="enterdress-submit.php" enctype="multipart/form-data" method="POST">
                   <br style="clear: both">
                   <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Provide Dress Details. </h3>
-
+                  <p class="text-center text-success"><?php echo (isset($_SESSION['dress_success'])) ? $_SESSION['dress_success'] : '';?></p>
+                  <?php
+            unset($_SESSION['dress_success']);
+            ?>
                   <div class="form-group">
                       <input type="text" class="form-control" id="dress_name" name="dress_name" placeholder="Dress Name" required autofocus="">
                   </div>
